@@ -30,7 +30,7 @@ export default function HomePage() {
 
         <main>
           <section className="container mx-auto px-4 py-20 text-center">
-            <h1 className="text-5xl font-bold mb-6 text-balance" style={{ color: '#5fa855' }}>Find Your Perfect Home</h1>
+            <h1 className="text-5xl font-bold mb-6 text-balance" style={{ color: '#556B2F' }}>Find Your Perfect Home</h1>
             <p className="text-xl text-muted-foreground mb-8 text-balance max-w-2xl mx-auto">
               Connect directly with property owners and discover your next home. No middlemen, no hassle.
             </p>
