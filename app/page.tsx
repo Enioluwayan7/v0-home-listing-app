@@ -12,7 +12,7 @@ export default function HomePage() {
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Home className="h-6 w-6" />
-              <span className="text-xl font-bold" style={{ color: 'var(--green)' }}>HomeConnect</span>
+              <span className="text-xl font-bold" style={{ color: '#5fa855' }}>HomeConnect</span>
             </div>
             <div className="flex items-center gap-4">
               <Button asChild variant="ghost">
@@ -21,7 +21,7 @@ export default function HomePage() {
               <Button asChild variant="outline">
                 <Link href="/auth/login">Sign In</Link>
               </Button>
-              <Button asChild style={{ backgroundColor: 'var(--olive-green)', color: 'white' }}>
+              <Button asChild style={{ backgroundColor: '#556B2F', color: 'white' }}>
                 <Link href="/auth/sign-up">Get Started</Link>
               </Button>
             </div>
@@ -30,7 +30,7 @@ export default function HomePage() {
 
         <main>
           <section className="container mx-auto px-4 py-20 text-center">
-            <h1 className="text-5xl font-bold mb-6 text-balance" style={{ color: 'var(--green)' }}>Find Your Perfect Home</h1>
+            <h1 className="text-5xl font-bold mb-6 text-balance" style={{ color: '#5fa855' }}>Find Your Perfect Home</h1>
             <p className="text-xl text-muted-foreground mb-8 text-balance max-w-2xl mx-auto">
               Connect directly with property owners and discover your next home. No middlemen, no hassle.
             </p>
