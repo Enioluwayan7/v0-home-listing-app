@@ -123,3 +123,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.olive-green-btn {
+  background-color: #556B2F;
+  color: white;
+}
+
+.green-text {
+  color: #5fa855;
+}

@@ -12,7 +12,7 @@ export default function HomePage() {
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Home className="h-6 w-6" />
-              <span className="text-xl font-bold" style={{ color: '#5fa855' }}>HomeConnect</span>
+              <span className="text-xl font-bold green-text">HomeConnect</span>
             </div>
             <div className="flex items-center gap-4">
               <Button asChild variant="ghost">
@@ -21,7 +21,7 @@ export default function HomePage() {
               <Button asChild variant="outline">
                 <Link href="/auth/login">Sign In</Link>
               </Button>
-              <Button asChild style={{ backgroundColor: '#556B2F', color: 'white' }}>
+              <Button asChild className="olive-green-btn">
                 <Link href="/auth/sign-up">Get Started</Link>
               </Button>
             </div>
