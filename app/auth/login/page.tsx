@@ -29,8 +29,11 @@ export default function LoginPage() {
         email,
         password,
       })
-      if (error) throw error
-
+      
+      if (error) {
+        throw new Error(error.message || "Failed to sign in")
+      }
+      
       // Get user profile to determine redirect
       const {
         data: { user },
@@ -45,7 +48,8 @@ export default function LoginPage() {
         }
       }
     } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "An error occurred")
+      const errorMessage = error instanceof Error ? error.message : "Failed to connect to authentication service. Please try again."
+      setError(errorMessage)
     } finally {
       setIsLoading(false)
     }
@@ -61,6 +65,10 @@ export default function LoginPage() {
               <CardDescription>Sign in to access your account</CardDescription>
             </CardHeader>
             <CardContent>
+              <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800">
+                <p className="font-semibold">Development Note:</p>
+                <p>To test authentication, deploy this project to production. In v0 preview, external API calls have network restrictions.</p>
+              </div>
               <form onSubmit={handleLogin}>
                 <div className="flex flex-col gap-6">
                   <div className="grid gap-2">
