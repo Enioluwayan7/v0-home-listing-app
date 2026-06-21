@@ -1,30 +1,10 @@
-# Home listing app
-
-*Automatically synced with your [v0.app](https://v0.app) deployments*
-
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/olabanjienioluwayan-gmailcoms-projects/v0-home-listing-app)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/sG1dT2WcOB9)
+# HomeLink - Landlord-Tenant Matching App
 
 ## Overview
+I am Enioluwayan, i create this app **HennyHomes**
+**HennyHomes** is a modern web/mobile application designed to simplify the process of connecting landlords and tenants. It provides a seamless platform for listing properties, searching for homes, and managing rentals efficiently.
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+Whether you're a landlord looking to rent out your property or a tenant searching for the perfect home, HomeLink makes the connection straightforward, secure, and hassle-free.
 
-## Deployment
-
-Your project is live at:
-
-**[https://vercel.com/olabanjienioluwayan-gmailcoms-projects/v0-home-listing-app](https://vercel.com/olabanjienioluwayan-gmailcoms-projects/v0-home-listing-app)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.app/chat/sG1dT2WcOB9](https://v0.app/chat/sG1dT2WcOB9)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Features
+**UpdateComing Soon....**
