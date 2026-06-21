@@ -57,7 +57,7 @@ export default function LoginPage() {
         <div className="flex flex-col gap-6">
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">Welcome Back</CardTitle>
+              <CardTitle className="text-2xl">Welcomes Back</CardTitle>
               <CardDescription>Sign in to access your account</CardDescription>
             </CardHeader>
             <CardContent>
