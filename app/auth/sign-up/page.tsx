@@ -66,7 +66,7 @@ export default function SignUpPage() {
             <Card className="shadow-lg border-0">
               <CardHeader className="bg-gradient-to-r from-[#556B2F] to-[#5fa855] text-white rounded-t-lg">
                 <CardTitle className="text-2xl">Create Account</CardTitle>
-                <CardDescription className="text-white/90">Join HomeConnect today</CardDescription>
+                <CardDescription className="text-white/90">Join HennyHomes today</CardDescription>
               </CardHeader>
               <CardContent className="pt-6">
               <form onSubmit={handleSignUp}>

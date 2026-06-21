@@ -69,7 +69,7 @@ export default function HomePage() {
             <div className="container mx-auto px-4 text-center">
               <h2 className="text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
               <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                Whether you&apos;re looking for your dream home or listing a property, HomeConnect makes it simple and secure.
+                Whether you&apos;re looking for your dream home or listing a property, HennyHomes makes it simple and secure.
               </p>
               <Button asChild size="lg" className="bg-white text-[#556B2F] hover:bg-gray-100">
                 <Link href="/auth/sign-up">Create Free Account</Link>
@@ -82,7 +82,7 @@ export default function HomePage() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
               <div>
-                <h4 className="font-semibold text-[#556B2F] mb-4">HomeConnect</h4>
+                <h4 className="font-semibold text-[#556B2F] mb-4">HennyHomes</h4>
                 <p className="text-sm text-gray-600">Connecting renters and property owners directly.</p>
               </div>
               <div>
@@ -108,7 +108,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="border-t border-gray-200 pt-8 text-center text-sm text-gray-600">
-              <p>&copy; 2026 HomeConnect. All rights reserved.</p>
+              <p>&copy; 2026 HennyHomes. All rights reserved.</p>
             </div>
           </div>
         </footer>

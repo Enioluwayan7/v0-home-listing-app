@@ -29,7 +29,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <Home className="h-6 w-6" />
-            <span className="text-xl font-bold">HomeConnect</span>
+            <span className="text-xl font-bold">HennyHomes</span>
           </Link>
           <Button asChild variant="ghost">
             <Link href="/properties">

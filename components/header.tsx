@@ -1,16 +1,15 @@
 import { Button } from "@/components/ui/button"
-import { Home, Search } from "lucide-react"
+import { Search } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b bg-white shadow-sm">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <div className="h-10 w-10 rounded-lg bg-[#556B2F] flex items-center justify-center">
-            <Home className="h-6 w-6 text-white" />
-          </div>
-          <span className="text-xl font-bold text-[#556B2F] hidden sm:inline">HomeConnect</span>
+      <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <Image src="/logo.png" alt="HennyHomes" width={50} height={50} className="h-12 w-12" />
+          <span className="text-xl font-bold text-[#556B2F] hidden sm:inline">HennyHomes</span>
         </Link>
         
         <nav className="flex items-center gap-2 sm:gap-4">
