@@ -9,7 +9,10 @@ export function Header() {
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <Image src="/logo.png" alt="HennyHomes" width={50} height={50} className="h-12 w-12" />
-          <span className="text-xl font-bold text-[#556B2F] hidden sm:inline">HennyHomes</span>
+          <div className="hidden sm:flex flex-col">
+            <span className="text-xl font-bold text-[#556B2F] leading-tight">HennyHomes</span>
+            <span className="text-xs text-gray-600 font-medium">HomeConnect</span>
+          </div>
         </Link>
         
         <nav className="flex items-center gap-2 sm:gap-4">
