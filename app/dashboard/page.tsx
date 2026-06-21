@@ -5,6 +5,7 @@ import { Plus } from "lucide-react"
 import Link from "next/link"
 import { PropertyCard } from "@/components/property-card"
 import { DashboardClient } from "./dashboard-client"
+import { Header } from "@/components/header"
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -31,12 +32,13 @@ export default async function DashboardPage() {
     .order("created_at", { ascending: false })
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="border-b">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold">My Properties</h1>
-          <div className="flex items-center gap-4">
-            <Button asChild>
+    <div className="min-h-screen bg-white">
+      <Header />
+      <div className="border-b bg-gradient-to-r from-[#556B2F]/5 to-[#5fa855]/5">
+        <div className="container mx-auto px-4 py-6 flex items-center justify-between">
+          <h1 className="text-3xl font-bold text-[#556B2F]">My Properties</h1>
+          <div className="flex items-center gap-3">
+            <Button asChild className="olive-green">
               <Link href="/dashboard/new">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Property
@@ -47,13 +49,13 @@ export default async function DashboardPage() {
             </form>
           </div>
         </div>
-      </header>
+      </div>
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-12">
         {!properties || properties.length === 0 ? (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground mb-4">You haven&apos;t listed any properties yet.</p>
-            <Button asChild>
+          <div className="text-center py-20 bg-gradient-to-br from-[#556B2F]/5 to-[#5fa855]/5 rounded-lg">
+            <p className="text-gray-600 mb-6 text-lg">You haven&apos;t listed any properties yet.</p>
+            <Button asChild className="olive-green">
               <Link href="/dashboard/new">
                 <Plus className="h-4 w-4 mr-2" />
                 List Your First Property
