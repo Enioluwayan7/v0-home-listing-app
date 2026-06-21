@@ -11,6 +11,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { Header } from "@/components/header"
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("")
@@ -57,15 +58,17 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-      <div className="w-full max-w-sm">
-        <div className="flex flex-col gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">Create Account</CardTitle>
-              <CardDescription>Join HomeConnect today</CardDescription>
-            </CardHeader>
-            <CardContent>
+    <>
+      <Header />
+      <div className="flex min-h-[calc(100vh-64px)] w-full items-center justify-center p-6 md:p-10 bg-gradient-to-br from-[#556B2F]/5 to-[#5fa855]/5">
+        <div className="w-full max-w-sm">
+          <div className="flex flex-col gap-6">
+            <Card className="shadow-lg border-0">
+              <CardHeader className="bg-gradient-to-r from-[#556B2F] to-[#5fa855] text-white rounded-t-lg">
+                <CardTitle className="text-2xl">Create Account</CardTitle>
+                <CardDescription className="text-white/90">Join HomeConnect today</CardDescription>
+              </CardHeader>
+              <CardContent className="pt-6">
               <form onSubmit={handleSignUp}>
                 <div className="flex flex-col gap-6">
                   <div className="grid gap-2">
@@ -127,8 +130,8 @@ export default function SignUpPage() {
                       </div>
                     </RadioGroup>
                   </div>
-                  {error && <p className="text-sm text-destructive">{error}</p>}
-                  <Button type="submit" className="w-full" disabled={isLoading}>
+                  {error && <p className="text-sm text-red-600">{error}</p>}
+                  <Button type="submit" className="w-full olive-green" disabled={isLoading}>
                     {isLoading ? "Creating account..." : "Sign Up"}
                   </Button>
                 </div>
@@ -139,10 +142,10 @@ export default function SignUpPage() {
                   </Link>
                 </div>
               </form>
-            </CardContent>
-          </Card>
+            </Card>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
