@@ -8,11 +8,26 @@ import { Header } from "@/components/header"
 export default async function PropertiesPage() {
   const supabase = await createClient()
 
-  const { data: properties } = await supabase
-    .from("properties")
-    .select("*")
-    .eq("status", "available")
-    .order("created_at", { ascending: false })
+  let properties = null
+  let error = null
+
+  try {
+    const { data, error: queryError } = await supabase
+      .from("properties")
+      .select("*")
+      .eq("status", "available")
+      .order("created_at", { ascending: false })
+
+    if (queryError) {
+      console.error("[v0] Properties query error:", queryError)
+      error = queryError
+    } else {
+      properties = data
+    }
+  } catch (err) {
+    console.error("[v0] Properties fetch error:", err)
+    error = err
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -28,7 +43,16 @@ export default async function PropertiesPage() {
           </div>
         </div>
 
-        {!properties || properties.length === 0 ? (
+        {error ? (
+          <div className="text-center py-20">
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 max-w-md mx-auto">
+              <p className="text-yellow-800 font-semibold mb-2">Unable to load properties</p>
+              <p className="text-yellow-700 text-sm">
+                {error instanceof Error ? error.message : "There was an issue connecting to the database. Please try again later."}
+              </p>
+            </div>
+          </div>
+        ) : !properties || properties.length === 0 ? (
           <div className="text-center py-20">
             <p className="text-gray-600 text-lg">No properties available at the moment. Check back soon!</p>
           </div>
