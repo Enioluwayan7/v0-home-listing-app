@@ -76,7 +76,7 @@ export default function SignUpPage() {
                       <Input
                         id="fullName"
                         type="text"
-                        placeholder="John Doe"
+                        placeholder="Emmanuel Henny"
                         required
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
@@ -98,7 +98,7 @@ export default function SignUpPage() {
                       <Input
                         id="phone"
                         type="tel"
-                        placeholder="+1 234 567 8900"
+                        placeholder="+234 705 5600 8900"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                       />
