@@ -1,10 +1,10 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Home, MapPin, Bed, Bath, Square, Edit, Trash2 } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
+import { Bath, BedDouble, Edit, MapPin, Square, Trash2 } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import type { Database } from "@/lib/database.types"
 
 type Property = Database["public"]["Tables"]["properties"]["Row"]
@@ -17,61 +17,20 @@ interface PropertyCardProps {
 
 export function PropertyCard({ property, onDelete, showActions = false }: PropertyCardProps) {
   return (
-    <Card className="overflow-hidden">
-      <div className="aspect-video bg-muted flex items-center justify-center">
-        <Home className="h-16 w-16 text-muted-foreground" />
-      </div>
-      <CardHeader>
-        <div className="flex items-start justify-between gap-2">
-          <div className="flex-1">
-            <CardTitle className="text-pretty">{property.title}</CardTitle>
-            <CardDescription className="flex items-center gap-1 mt-1">
-              <MapPin className="h-3 w-3" />
-              {property.location}
-            </CardDescription>
-          </div>
-          <Badge variant={property.status === "available" ? "default" : "secondary"} className="shrink-0">
-            {property.status}
-          </Badge>
+    <article className="group overflow-hidden border border-border bg-card transition-shadow hover:shadow-lg">
+      <Link href={`/properties/${property.id}`} className="block">
+        <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+          <Image src="/hero-home.png" alt={property.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+          <Badge className="absolute left-4 top-4 bg-background text-primary hover:bg-background">{property.status}</Badge>
         </div>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm text-muted-foreground line-clamp-2 mb-4">{property.description}</p>
-        <div className="flex items-center gap-4 text-sm">
-          <div className="flex items-center gap-1">
-            <Bed className="h-4 w-4 text-muted-foreground" />
-            <span>{property.bedrooms}</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Bath className="h-4 w-4 text-muted-foreground" />
-            <span>{property.bathrooms}</span>
-          </div>
-          {property.area_sqft && (
-            <div className="flex items-center gap-1">
-              <Square className="h-4 w-4 text-muted-foreground" />
-              <span>{property.area_sqft} sqft</span>
-            </div>
-          )}
+        <div className="p-5">
+          <p className="flex items-center gap-1.5 text-xs text-muted-foreground"><MapPin data-icon="inline-start" />{property.location}</p>
+          <h3 className="mt-2 line-clamp-1 text-lg font-semibold">{property.title}</h3>
+          <p className="mt-3 text-xl font-semibold text-primary">₦{property.price.toLocaleString()} <span className="text-xs font-normal text-muted-foreground">/ period</span></p>
+          <div className="mt-4 flex items-center gap-4 border-t border-border pt-4 text-sm text-muted-foreground"><span className="flex items-center gap-1.5"><BedDouble data-icon="inline-start" />{property.bedrooms}</span><span className="flex items-center gap-1.5"><Bath data-icon="inline-start" />{property.bathrooms}</span>{property.area_sqft && <span className="flex items-center gap-1.5"><Square data-icon="inline-start" />{property.area_sqft} sqft</span>}</div>
         </div>
-        <div className="mt-4">
-          <p className="text-2xl font-bold">${property.price.toLocaleString()}</p>
-          <p className="text-xs text-muted-foreground capitalize">{property.property_type}</p>
-        </div>
-      </CardContent>
-      {showActions && (
-        <CardFooter className="gap-2">
-          <Button asChild variant="outline" className="flex-1 bg-transparent">
-            <Link href={`/dashboard/edit/${property.id}`}>
-              <Edit className="h-4 w-4 mr-2" />
-              Edit
-            </Link>
-          </Button>
-          <Button variant="destructive" className="flex-1" onClick={() => onDelete?.(property.id)}>
-            <Trash2 className="h-4 w-4 mr-2" />
-            Delete
-          </Button>
-        </CardFooter>
-      )}
-    </Card>
+      </Link>
+      {showActions && <div className="flex gap-2 border-t border-border p-4"><Button asChild variant="outline" className="flex-1"><Link href={`/dashboard/edit/${property.id}`}><Edit data-icon="inline-start" />Edit</Link></Button><Button variant="destructive" className="flex-1" onClick={() => onDelete?.(property.id)}><Trash2 data-icon="inline-start" />Delete</Button></div>}
+    </article>
   )
 }

@@ -8,8 +8,8 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "HennyHomes - Find Your Perfect Home",
-  description: "A platform connecting home owners with potential renters and buyers",
+  title: "HennyHomes | Find a place to call home",
+  description: "Discover homes across Nigeria and connect directly with landlords through HennyHomes HomeConnect.",
   generator: "v0.app",
   icons: {
     icon: [
